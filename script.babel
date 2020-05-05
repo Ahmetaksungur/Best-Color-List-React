@@ -1,0 +1,97 @@
+new ClipboardJS(".copy-btn");
+
+const posts = [
+  {
+    color1: "#ffffff",
+    color2: "#f2f2f2",
+    color3: "#e5e5e5",
+    color4: "#d8d8d8"
+  },
+  {
+    color1: "#000000",
+    color2: "#202020",
+    color3: "#333333",
+    color4: "#585858"
+  },
+
+  {
+    color1: "#3366ff",
+    color2: "#5588ff",
+    color3: "#bbeeff",
+    color4: "#99ccff"
+  },
+
+  {
+    color1: "#13100f",
+    color2: "#080708",
+    color3: "#f5e20d",
+    color4: "#f5ea1a"
+  },
+
+  {
+    color1: "#720606",
+    color2: "#9b0f01",
+    color3: "#b81c0c",
+    color4: "#25241d"
+  },
+
+  {
+    color1: "#00b100",
+    color2: "#00cb00",
+    color3: "#00e200",
+    color4: "#00f100"
+  },
+  {
+    color1: "#ff0045",
+    color2: "#ff3558",
+    color3: "#fe4e6c",
+    color4: "#ff557a"
+  },
+  {
+    color1: "#0086ff",
+    color2: "#0bbeff",
+    color3: "#07aa7b",
+    color4: "#31f48e"
+  },
+  {
+    color1: "#001e10",
+    color2: "#003e21",
+    color3: "#067242",
+    color4: "#098b54"
+  }
+];
+
+class ColorList extends React.Component {
+  render() {
+    const listItems = posts.map((post) => {
+      return (
+        <div className="colors">
+          <div className="color" style={{ backgroundColor: post.color1 }}>
+            <div className="copy-btn" data-clipboard-text={post.color1}></div>
+            <span>{post.color1}</span>
+          </div>
+          <div className="color" style={{ backgroundColor: post.color2 }}>
+            <div className="copy-btn" data-clipboard-text={post.color2}></div>
+            <span>{post.color2}</span>
+          </div>
+          <div className="color" style={{ backgroundColor: post.color3 }}>
+            <div className="copy-btn" data-clipboard-text={post.color3}></div>
+            <span>{post.color3}</span>
+          </div>
+          <div className="color" style={{ backgroundColor: post.color4 }}>
+            <div className="copy-btn" data-clipboard-text={post.color4}></div>
+            <span>{post.color4}</span>
+          </div>
+        </div>
+      );
+    });
+    return (
+      <div className="center">
+        {" "}
+        <h1>Colors</h1> {listItems}{" "}
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<ColorList />, document.getElementById("colorlist"));
